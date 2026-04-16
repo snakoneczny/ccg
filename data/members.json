@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Prof. Wojciech Hellwing",
+    "role": "Group Lead",
+    "image": "assets/members/hellwing.jpg",
+    "orcid": "https://orcid.org/0000-0003-4634-4442",
+    "scholar": "https://scholar.google.com/citations?user=gt1oyEIAAAAJ&hl=pl",
+    "linkedin": "https://www.linkedin.com/in/wojciech-hellwing-70333a4a/",
+    "website": "https://www.cft.edu.pl/en/pracownik/whellwing/",
+    "github": ""
+  },
+  {
+    "name": "Prof. Maciej Bilicki",
+    "role": "Group Lead",
+    "image": "assets/members/bilicki.jpg",
+    "orcid": "https://orcid.org/0000-0002-3910-5809",
+    "scholar": "https://scholar.google.com/citations?user=czfvotwAAAAJ&hl=pl",
+    "linkedin": "https://www.linkedin.com/in/maciej-bilicki-5a4b5a2/",
+    "website": "https://www.cft.edu.pl/pracownik/mbilicki/",
+    "github": "https://github.com/..."
+  },
+  {
+    "name": "Szymon Nakoneczny",
+    "role": "Postdoc",
+    "image": "assets/members/nakoneczny.jpg",
+    "orcid": "https://orcid.org/0000-0003-2130-7143",
+    "scholar": "https://scholar.google.com/citations?user=5z52zoIAAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/szymon-nakoneczny-62281b8b/",
+    "website": "https://www.cft.edu.pl/pracownik/dr-szymon-nakoneczny",
+    "github": "https://github.com/snakoneczny"
+  },
+  {
+    "name": "Anjitha John William",
+    "role": "PhD Student",
+    "image": "assets/members/William.jpg",
+    "orcid": "https://orcid.org/0000-0002-9720-9542",
+    "scholar": "https://scholar.google.com/citations?user=WN-J92sAAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/anjitha-john-william?originalSubdomain=pl",
+    "website": "https://www.cft.edu.pl/pracownik/anjithajm/",
+    "github": ""
+  },
+  {
+    "name": "Gursharanjit Kaur",
+    "role": "PhD Student",
+    "image": "assets/members/Kaur.jpg",
+    "orcid": "https://orcid.org/0000-0002-6096-5803",
+    "scholar": "https://scholar.google.com/citations?user=X6ZZMxgAAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/kaurgursharanjit?originalSubdomain=pl",
+    "website": "https://www.cft.edu.pl/pracownik/gursharanjitk/",
+    "github": ""
+  },
+  {
+    "name": "Feven Markos Hunde",
+    "role": "PhD Student",
+    "image": "assets/members/Hunde.jpg",
+    "orcid": "https://orcid.org/0000-0003-4780-2126",
+    "scholar": "https://scholar.google.com/citations?user=cyRlYX4AAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/feven-markos-hunde/",
+    "website": "https://www.cft.edu.pl/pracownik/fevenm/",
+    "github": ""
+  }
+]

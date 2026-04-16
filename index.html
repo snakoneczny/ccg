@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computational Cosmology Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 scroll-smooth">
+
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-40 backdrop-blur bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="font-semibold text-lg">CCG</div>
+        <div class="hidden md:flex gap-8 text-sm">
+            <a href="#members">Members</a>
+            <a href="#news">News</a>
+            <a href="#projects">Projects</a>
+        </div>
+        <button onclick="toggleTheme()" class="ml-4 px-3 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-sm">
+            🌙 / ☀️
+        </button>
+    </div>
+</nav>
+
+<header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 bg-gradient-to-br from-indigo-900 via-blue-800 to-indigo-600 text-white">
+    <h1 class="text-5xl md:text-6xl font-bold mb-6">Computational Cosmology Group</h1>
+    <p class="text-lg md:text-xl max-w-2xl opacity-90">
+        We explore the Universe using simulations, surveys, and AI.
+    </p>
+</header>
+
+<section id="members" class="py-20 px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Members</h2>
+    <div id="members-container" class="grid md:grid-cols-3 gap-8"></div>
+</section>
+
+<section id="news" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-12">News</h2>
+    <div id="news-container" class="grid md:grid-cols-3 gap-8"></div>
+</section>
+
+<section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-12">Internship Projects</h2>
+    <div id="projects-container" class="grid md:grid-cols-3 gap-8"></div>
+</section>
+
+<script>
+function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+}
+
+function icon(src, label) {
+    return `<img title="${label}" src="${src}" class="w-5 h-5 invert brightness-0 transition hover:scale-110 dark:invert">`;
+}
+
+// MEMBERS
+async function loadMembers() {
+    const res = await fetch('data/members.json');
+    const data = await res.json();
+    const container = document.getElementById('members-container');
+
+    data.forEach(m => {
+        const div = document.createElement('div');
+        div.className = "group bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+
+        const links = `
+            <div class="flex gap-4 items-center">
+                ${m.orcid ? `<a href="${m.orcid}" target="_blank" title="ORCID">${icon('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/orcid.svg','ORCID')}</a>` : ''}
+                ${m.scholar ? `<a href="${m.scholar}" target="_blank" title="Google Scholar">${icon('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlescholar.svg','Scholar')}</a>` : ''}
+                ${m.linkedin ? `<a href="${m.linkedin}" target="_blank" title="LinkedIn">${icon('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg','LinkedIn')}</a>` : ''}
+                ${m.website ? `<a href="${m.website}" target="_blank" title="Website">${icon('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/internetarchive.svg','Website')}</a>` : ''}
+                ${m.github ? `<a href="${m.github}" target="_blank" title="GitHub">${icon('https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg','GitHub')}</a>` : ''}
+            </div>
+        `;
+
+        div.innerHTML = `
+            <div class="relative">
+                <img src="${m.image}" class="w-full h-48 object-cover">
+                
+                <!-- hover overlay ONLY on image -->
+                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                    <div class="translate-y-3 group-hover:translate-y-0 transition flex gap-4">
+                        ${links}
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5">
+                <h3 class="text-xl font-semibold">${m.name}</h3>
+                <p class="text-sm opacity-80">${m.role}</p>
+            </div>
+        `;
+
+        container.appendChild(div);
+    });
+}
+
+// NEWS
+async function loadNews() {
+    const res = await fetch('data/news.json');
+    const data = await res.json();
+    const container = document.getElementById('news-container');
+
+    const sorted = data.sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0,3);
+
+    for (const n of sorted) {
+        const md = await fetch(n.markdown).then(r => r.text());
+        const html = marked.parse(md);
+
+        const div = document.createElement('div');
+        div.className = "bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+
+        div.innerHTML = `
+            <img src="${n.image}" class="w-full h-48 object-cover">
+            <div class="p-5">
+                <p class="text-xs opacity-60 mb-2">${n.date}</p>
+                <h3 class="text-xl font-semibold mb-2">${n.title}</h3>
+                <div class="text-sm opacity-80 prose dark:prose-invert">${html}</div>
+            </div>
+        `;
+
+        container.appendChild(div);
+    }
+}
+
+// PROJECTS
+async function loadProjects() {
+    const res = await fetch('data/projects.json');
+    const data = await res.json();
+    const container = document.getElementById('projects-container');
+
+    for (const p of data) {
+        const md = await fetch(p.markdown).then(r => r.text());
+        const html = marked.parse(md);
+
+        const div = document.createElement('div');
+        div.className = "bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+
+        div.innerHTML = `
+            <div class="p-5">
+                <h3 class="text-xl font-semibold mb-2">${p.title}</h3>
+                <div class="text-sm opacity-80 prose dark:prose-invert">${html}</div>
+            </div>
+        `;
+
+        container.appendChild(div);
+    }
+}
+
+loadMembers();
+loadNews();
+loadProjects();
+</script>
+
+</body>
+</html>

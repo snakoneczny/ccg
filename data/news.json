@@ -1,8 +1,20 @@
 [
   {
-    "title": "New Paper",
-    "date": "2026-03-01",
-    "image": "assets/news/paper.jpg",
-    "markdown": "data/news/paper.md"
+    "title": "New publication",
+    "date": "2026-04-30",
+    "image": "assets/news/1_paper.jpg",
+    "markdown": "data/news/1_paper.md"
+  },
+  {
+    "title": "Award",
+    "date": "2026-04-29",
+    "image": "assets/news/2_award.svg",
+    "markdown": "data/news/2_award.md"
+  },
+  {
+    "title": "New publication",
+    "date": "2025-11-21",
+    "image": "assets/news/3_paper.jpg",
+    "markdown": "data/news/3_paper.md"
   }
 ]

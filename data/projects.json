@@ -1,6 +1,18 @@
 [
   {
-    "title": "Galaxy Classification",
-    "markdown": "data/projects/galaxies.md"
+    "title": "Simulation based inference",
+    "markdown": "data/projects/sjn_1_sbi.md"
+  },
+  {
+    "title": "Cosmology using LOFAR data",
+    "markdown": "data/projects/sjn_2_lofar.md"
+  },
+  {
+    "title": "Machine learning with DESI deep fields",
+    "markdown": "data/projects/sjn_3_desi.md"
+  },
+  {
+    "title": "Cosmology using ACT data",
+    "markdown": "data/projects/sjn_4_act.md"
   }
 ]

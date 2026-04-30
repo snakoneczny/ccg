@@ -1,0 +1,1 @@
+Our postdoc, Szymon J. Nakoneczny, was awarded the Visegrad Group Academies Young Researcher Award 2026. The awards topic was "AI applications in physics and engineering." Szymon will give a talk on June 18th during the Visegrad Group Academies Forum.

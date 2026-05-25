@@ -1,5 +1,9 @@
 [
   {
+    "title": "Clustering redshifts for KiDS data",
+    "markdown": "data/projects/mb_1_redshifts.md"
+  },
+  {
     "title": "Simulation based inference",
     "markdown": "data/projects/sjn_1_sbi.md"
   },

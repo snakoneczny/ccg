@@ -4,19 +4,19 @@
     "markdown": "data/projects/mb_1_redshifts.md"
   },
   {
+    "title": "Cosmology with gravitational wave sources",
+    "markdown": "data/projects/mb_2_gw.md"
+  },  
+  {
     "title": "Simulation based inference",
     "markdown": "data/projects/sjn_1_sbi.md"
   },
   {
-    "title": "Cosmology using LOFAR data",
-    "markdown": "data/projects/sjn_2_lofar.md"
-  },
-  {
     "title": "Machine learning with DESI deep fields",
-    "markdown": "data/projects/sjn_3_desi.md"
+    "markdown": "data/projects/sjn_2_desi.md"
   },
   {
     "title": "Cosmology using ACT data",
-    "markdown": "data/projects/sjn_4_act.md"
+    "markdown": "data/projects/sjn_3_act.md"
   }
 ]

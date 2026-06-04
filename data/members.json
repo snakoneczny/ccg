@@ -31,12 +31,22 @@
   },
   {
     "name": "Anjitha John William",
-    "role": "PhD Student",
+    "role": "PhD Candidate",
     "image": "assets/members/William.jpg",
     "orcid": "https://orcid.org/0000-0002-9720-9542",
     "scholar": "https://scholar.google.com/citations?user=WN-J92sAAAAJ&hl=en",
     "linkedin": "https://www.linkedin.com/in/anjitha-john-william?originalSubdomain=pl",
     "website": "https://www.cft.edu.pl/pracownik/anjithajm/",
+    "github": ""
+  },
+  {
+    "name": "Feven Markos Hunde",
+    "role": "PhD Candidate",
+    "image": "assets/members/Hunde.jpg",
+    "orcid": "https://orcid.org/0000-0003-4780-2126",
+    "scholar": "https://scholar.google.com/citations?user=cyRlYX4AAAAJ&hl=en",
+    "linkedin": "https://www.linkedin.com/in/feven-markos-hunde/",
+    "website": "https://www.cft.edu.pl/pracownik/fevenm/",
     "github": ""
   },
   {
@@ -47,16 +57,6 @@
     "scholar": "https://scholar.google.com/citations?user=X6ZZMxgAAAAJ&hl=en",
     "linkedin": "https://www.linkedin.com/in/kaurgursharanjit?originalSubdomain=pl",
     "website": "https://www.cft.edu.pl/pracownik/gursharanjitk/",
-    "github": ""
-  },
-  {
-    "name": "Feven Markos Hunde",
-    "role": "PhD Student",
-    "image": "assets/members/Hunde.jpg",
-    "orcid": "https://orcid.org/0000-0003-4780-2126",
-    "scholar": "https://scholar.google.com/citations?user=cyRlYX4AAAAJ&hl=en",
-    "linkedin": "https://www.linkedin.com/in/feven-markos-hunde/",
-    "website": "https://www.cft.edu.pl/pracownik/fevenm/",
     "github": ""
   }
 ]

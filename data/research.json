@@ -1,0 +1,30 @@
+{
+  "intro": "The Computational Cosmology Group studies the large-scale structure of the Universe by combining cosmological simulations, large astronomical surveys, and machine learning. We participate in major observational programmes and develop statistical and AI methods to test cosmological models and understand the nature of dark matter and dark energy.",
+  "areas": [
+    {
+      "title": "Galaxy surveys & large-scale structure",
+      "image": "assets/research/surveys.jpg",
+      "text": "We analyse data from wide galaxy surveys such as KiDS and DESI, together with the LOFAR radio survey, to map the distribution of galaxies across cosmic time and constrain the growth of large-scale structure."
+    },
+    {
+      "title": "Cosmic microwave background",
+      "image": "assets/research/cmb.jpg",
+      "text": "We use cosmic microwave background measurements, including data from the Planck satellite, to probe the early Universe and its later evolution through gravitational lensing and cross-correlations."
+    },
+    {
+      "title": "Gravitational-wave cosmology",
+      "image": "assets/research/gw.jpg",
+      "text": "We explore how gravitational-wave sources can be used as cosmological probes, for example to measure the expansion history of the Universe independently of the traditional distance ladder."
+    },
+    {
+      "title": "Cosmological simulations",
+      "image": "assets/research/simulations.jpg",
+      "text": "We run and analyse cosmological N-body and hydrodynamical simulations to model the growth of cosmic structure and the properties of dark matter, including its role in the cosmic web."
+    },
+    {
+      "title": "Machine learning & inference",
+      "image": "assets/research/ml.svg",
+      "text": "We develop machine-learning and simulation-based inference methods to extract cosmological information from large and complex datasets that are hard to model with classical statistics."
+    }
+  ]
+}

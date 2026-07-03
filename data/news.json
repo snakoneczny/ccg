@@ -1,20 +1,12 @@
 [
   {
-    "title": "New publication",
-    "date": "2026-04-30",
-    "image": "assets/news/1_paper.jpg",
-    "markdown": "data/news/1_paper.md"
+    "title": "PhD theses submitted",
+    "date": "2026-06-16",
+    "text": "Anjitha John William and Feven Markos Hunde submitted their PhD theses. Congratulations to both!"
   },
   {
-    "title": "Award",
+    "title": "Young Researcher Award",
     "date": "2026-04-29",
-    "image": "assets/news/2_award.svg",
-    "markdown": "data/news/2_award.md"
-  },
-  {
-    "title": "New publication",
-    "date": "2025-11-21",
-    "image": "assets/news/3_paper.jpg",
-    "markdown": "data/news/3_paper.md"
+    "text": "Our postdoc Szymon J. Nakoneczny received the Visegrad Group Academies Young Researcher Award 2026, on the topic of AI applications in physics and engineering."
   }
 ]

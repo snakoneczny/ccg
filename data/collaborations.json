@@ -1,0 +1,7 @@
+[
+  { "name": "KiDS", "url": "http://kids.strw.leidenuniv.nl/", "logo": "assets/logos/kids.jpg" },
+  { "name": "LOFAR", "url": "https://www.lofar.eu/", "logo": "assets/logos/lofar.png" },
+  { "name": "LIGO", "url": "https://www.ligo.org/", "logo": "assets/logos/ligo.png" },
+  { "name": "4MOST", "url": "https://www.4most.eu/", "logo": "assets/logos/4most.png" },
+  { "name": "NCN", "url": "https://www.ncn.gov.pl/en", "logo": "assets/logos/ncn.svg" }
+]

@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computational Cosmology Group</title>
+    <meta name="description" content="Computational Cosmology Group — we explore the Universe using simulations, surveys, and AI.">
+    <meta name="theme-color" content="#ffffff" id="theme-color-meta">
+    <!-- Favicon: a small "cosmic web" node-and-filament mark, echoing the hero
+         image, on a pale lavender chip so it stays legible in browser tabs. -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23f4f1fb'/><g stroke='%237c6fd8' stroke-width='1.6' stroke-linecap='round' opacity='0.6'><line x1='14' y1='20' x2='30' y2='12'/><line x1='30' y1='12' x2='46' y2='23'/><line x1='14' y1='20' x2='19' y2='42'/><line x1='19' y1='42' x2='37' y2='47'/><line x1='37' y1='47' x2='46' y2='23'/><line x1='46' y1='23' x2='50' y2='41'/><line x1='37' y1='47' x2='50' y2='41'/></g><g fill='%234f46e5'><circle cx='14' cy='20' r='3'/><circle cx='30' cy='12' r='2.4'/><circle cx='46' cy='23' r='4.2'/><circle cx='19' cy='42' r='2.4'/><circle cx='37' cy='47' r='3'/><circle cx='50' cy='41' r='2.4'/></g></svg>">
+    <!-- Social sharing preview (Open Graph / Twitter). Uses the site's final
+         published URL — absolute URLs are required for previews to render
+         correctly on most platforms. -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Computational Cosmology Group">
+    <meta property="og:description" content="We explore the Universe using simulations, surveys, and AI.">
+    <meta property="og:image" content="https://ccg.cft.edu.pl/assets/hero/tng300.jpg">
+    <meta property="og:url" content="https://ccg.cft.edu.pl/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Computational Cosmology Group">
+    <meta name="twitter:description" content="We explore the Universe using simulations, surveys, and AI.">
+    <meta name="twitter:image" content="https://ccg.cft.edu.pl/assets/hero/tng300.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -13,58 +29,200 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        // Neutral, muted charcoal palette for dark mode — echoes
+                        // the desaturated tone of the hero image rather than a
+                        // saturated navy/indigo "space" theme.
+                        night: {
+                            700: '#4f515a',
+                            750: '#474950',
+                            800: '#3a3c43',
+                            900: '#2d2f35',
+                            950: '#26282d'
+                        }
                     }
                 }
             }
         }
     </script>
+    <script>
+        // Apply the saved theme before paint so there is no flash.
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-color-meta').setAttribute('content', '#26282d');
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Single source of truth for the vertical spacing of every section. */
+        :root { --section-py: 5rem; }
+        .section { padding-top: var(--section-py); padding-bottom: var(--section-py); }
+
+        /* Dark mode: a calm, neutral charcoal — echoes the muted, desaturated
+           tone of the hero image instead of a saturated "space" theme. Just a
+           single, very soft highlight near the top for a touch of depth. */
+        .dark body {
+            background-color: #26282d;
+            background-image: radial-gradient(60% 40% at 50% 0%, rgba(160, 155, 170, 0.05), transparent 60%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+    </style>
 </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 scroll-smooth">
+<body class="bg-white dark:bg-night-950 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 scroll-smooth">
 
 <!-- Navbar -->
-<nav class="fixed top-0 left-0 w-full z-40 backdrop-blur bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-800">
+<nav class="fixed top-0 left-0 w-full z-40 backdrop-blur bg-white/70 dark:bg-night-900/70 border-b border-gray-200 dark:border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div class="font-semibold text-lg">CCG</div>
         <div class="hidden md:flex gap-8 text-sm">
-            <a href="#members">Members</a>
+            <a href="#research">Research</a>
+            <a href="#people">People</a>
+            <a href="#publications">Publications</a>
             <a href="#news">News</a>
-            <a href="#projects">Projects</a>
+            <a href="#join">Join us</a>
         </div>
-        <button onclick="toggleTheme()" class="ml-4 px-3 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-sm">
-            🌙 / ☀️
-        </button>
+        <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
+                <span class="text-sm select-none">Dark</span>
+                <button onclick="toggleTheme()" role="switch" aria-label="Toggle dark mode"
+                    class="relative w-12 h-6 shrink-0 rounded-full bg-gray-300 dark:bg-indigo-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 focus:ring-offset-transparent">
+                    <span class="absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-300 dark:translate-x-6"></span>
+                </button>
+            </div>
+            <button onclick="toggleMenu()" aria-label="Open menu" class="md:hidden w-9 h-9 flex flex-col justify-center items-center gap-1.5">
+                <span class="block w-5 h-0.5 bg-current"></span>
+                <span class="block w-5 h-0.5 bg-current"></span>
+                <span class="block w-5 h-0.5 bg-current"></span>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3 text-sm border-t border-gray-200 dark:border-white/10 pt-3">
+        <a href="#research" onclick="toggleMenu()">Research</a>
+        <a href="#people" onclick="toggleMenu()">People</a>
+        <a href="#publications" onclick="toggleMenu()">Publications</a>
+        <a href="#news" onclick="toggleMenu()">News</a>
+        <a href="#join" onclick="toggleMenu()">Join us</a>
     </div>
 </nav>
 
-<header class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 bg-gradient-to-br from-indigo-900 via-blue-800 to-indigo-600 text-white">
-    <h1 class="text-5xl md:text-6xl font-bold mb-6">Computational Cosmology Group</h1>
-    <p class="text-lg md:text-xl max-w-2xl opacity-90">
-        We explore the Universe using simulations, surveys, and AI.
+<!-- Hero: background image is light (pastel cosmic web), so we use dark text in
+     light mode and a dark overlay + white text in dark mode. -->
+<header class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-32 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('assets/hero/tng300.jpg')"></div>
+    <div class="absolute inset-0 bg-white/40 dark:bg-night-950/55"></div>
+    <div class="relative z-10 [text-shadow:0_2px_24px_rgba(255,255,255,0.6)] dark:[text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-indigo-950 dark:text-white">Computational Cosmology Group</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-indigo-900/90 dark:text-gray-200">
+            We explore the Universe using simulations, surveys, and AI.
+        </p>
+    </div>
+    <p class="absolute bottom-3 right-4 z-10 text-[10px] text-indigo-900/60 dark:text-gray-400">
+        Simulation image: IllustrisTNG Collaboration
     </p>
 </header>
 
-<section id="members" class="py-20 px-6 max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Members</h2>
-    <div id="members-container" class="grid md:grid-cols-3 gap-8"></div>
+<section id="research" class="section scroll-mt-24 px-6 max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-6">Research</h2>
+    <div id="research-intro" class="max-w-3xl mx-auto text-center text-lg opacity-80 mb-12 prose dark:prose-invert"></div>
+    <div id="research-container" class="flex flex-wrap justify-center gap-8"></div>
 </section>
 
-<section id="news" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+<section id="collaborations" class="section scroll-mt-24 px-6 bg-gray-100 dark:bg-night-900">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-3">Collaborations &amp; funding</h2>
+        <p class="text-center opacity-70 mb-14 max-w-2xl mx-auto">We are part of major international surveys and collaborations, supported by leading funding agencies.</p>
+        <div id="collaborations-container" class="flex flex-wrap justify-center items-center gap-8 md:gap-10"></div>
+    </div>
+</section>
+
+<section id="publications" class="section scroll-mt-24 px-6">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Recent publications</h2>
+        <div id="publications-container" class="space-y-4"></div>
+        <div id="publications-ads" class="text-center mt-10"></div>
+    </div>
+</section>
+
+<section id="people" class="section scroll-mt-24 px-6 bg-gray-100 dark:bg-night-900">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">People</h2>
+        <div id="members-container" class="flex flex-wrap justify-center gap-8"></div>
+        <div class="flex flex-col items-center mt-12">
+            <button id="former-toggle" onclick="toggleFormer()" aria-expanded="false" aria-controls="former-container" class="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition">
+                Former members
+                <span id="former-caret" aria-hidden="true" class="text-xs transition-transform duration-300">▾</span>
+            </button>
+            <div id="former-container" class="hidden w-full max-w-3xl mt-6 bg-white dark:bg-night-800 rounded-2xl shadow-lg overflow-hidden divide-y divide-gray-100 dark:divide-white/10"></div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="section scroll-mt-24 px-6">
     <h2 class="text-3xl font-bold text-center mb-12">News</h2>
-    <div id="news-container" class="grid md:grid-cols-3 gap-8"></div>
+    <div id="news-container" class="flex flex-wrap justify-center gap-8 md:gap-10"></div>
 </section>
 
-<section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-center mb-12">Internship, Master and Bachelor Thesis Projects</h2>
-    <div id="projects-container" class="grid md:grid-cols-3 gap-8"></div>
+<section id="join" class="section scroll-mt-24 px-6 bg-gray-100 dark:bg-night-900">
+    <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">Join us</h2>
+        <p class="text-center opacity-70 mb-12 max-w-2xl mx-auto">Internship, Bachelor and Master thesis projects, plus PhD and postdoc openings — get in touch if you would like to work with us.</p>
+        <div id="projects-container" class="max-w-3xl mx-auto space-y-3"></div>
+    </div>
 </section>
+
+<footer class="border-t border-gray-200 dark:border-white/10 py-14 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+        <div class="font-semibold text-base">Computational Cosmology Group</div>
+        <p class="opacity-70 text-sm mt-2">
+            Center for Theoretical Physics, Polish Academy of Sciences<br>
+            Al. Lotników 32/46, 02-668 Warsaw, Poland
+        </p>
+        <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm mt-5">
+            <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#research">Research</a>
+            <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#people">People</a>
+            <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#publications">Publications</a>
+            <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#join">Join us</a>
+            <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="https://www.cft.edu.pl/en" target="_blank" rel="noopener">CFT PAN</a>
+        </nav>
+        <div class="mt-8 pt-6 border-t border-gray-200 dark:border-white/10 text-xs opacity-55 space-y-2">
+            <p>© <span id="footer-year"></span> Computational Cosmology Group</p>
+            <p>Research images: Hubble Ultra Deep Field (NASA/ESA), CMB (ESA/Planck Collaboration), gravitational waves (NASA/GSFC Conceptual Image Lab), cosmic web (IllustrisTNG Collaboration).</p>
+        </div>
+    </div>
+</footer>
 
 <script>
+// ---- Data fetching ------------------------------------------------------
+// Always fetch the latest data/content files, so edits to the JSON files
+// show up immediately instead of being served from the browser cache.
+const _origFetch = window.fetch;
+window.fetch = (url, opts = {}) => _origFetch(url, { cache: 'no-store', ...opts });
+
+// ---- Theme, navigation & misc UI -----------------------------------------
 function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
+    const dark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    document.getElementById('theme-color-meta').setAttribute('content', dark ? '#26282d' : '#ffffff');
 }
 
+function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+}
+
+function toggleFormer() {
+    const el = document.getElementById('former-container');
+    const expanded = el.classList.toggle('hidden') === false;
+    document.getElementById('former-caret').classList.toggle('rotate-180');
+    document.getElementById('former-toggle').setAttribute('aria-expanded', String(expanded));
+}
+
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+// ---- Data loaders ---------------------------------------------------------
 function icon(src, label) {
     return `<img title="${label}" src="${src}" class="w-5 h-5 invert brightness-0 transition hover:scale-110 dark:invert">`;
 }
@@ -77,7 +235,7 @@ async function loadMembers() {
 
     data.forEach(m => {
         const div = document.createElement('div');
-        div.className = "group bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+        div.className = "group w-full sm:w-[22rem] bg-white dark:bg-night-800 rounded-2xl shadow-lg overflow-hidden";
 
         const links = `
             <div class="flex gap-4 items-center">
@@ -91,7 +249,7 @@ async function loadMembers() {
 
         div.innerHTML = `
             <div class="relative">
-                <img src="${m.image}" class="w-full h-48 object-cover">
+                <img src="${m.image}" alt="${m.name}" class="w-full h-48 object-cover">
                 
                 <!-- hover overlay ONLY on image -->
                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
@@ -112,6 +270,8 @@ async function loadMembers() {
 }
 
 // NEWS
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
 async function loadNews() {
     const res = await fetch('data/news.json');
     const data = await res.json();
@@ -120,18 +280,26 @@ async function loadNews() {
     const sorted = data.sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0,3);
 
     for (const n of sorted) {
-        const md = await fetch(n.markdown).then(r => r.text());
-        const html = marked.parse(md);
+        // Parse the date string manually to avoid time-zone shifts.
+        const [year, month, day] = n.date.split('-');
+        const monthLabel = MONTHS[parseInt(month, 10) - 1] || '';
 
         const div = document.createElement('div');
-        div.className = "bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+        div.className = "w-full sm:w-72 bg-white dark:bg-night-800 rounded-xl shadow-md overflow-hidden flex flex-col";
 
         div.innerHTML = `
-            <img src="${n.image}" class="w-full h-48 object-cover">
-            <div class="p-5">
-                <p class="text-xs opacity-60 mb-2">${n.date}</p>
-                <h3 class="text-xl font-semibold mb-2">${n.title}</h3>
-                <div class="text-sm opacity-80 prose dark:prose-invert">${html}</div>
+            <div class="flex justify-center gap-12 pt-2.5 bg-indigo-50 dark:bg-indigo-950">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-200 dark:bg-white/10"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-200 dark:bg-white/10"></span>
+            </div>
+            <div class="bg-indigo-50 dark:bg-indigo-950 text-center pt-2 pb-4">
+                <div class="text-xs uppercase tracking-[0.2em] text-indigo-500/80 dark:text-white dark:opacity-70">${monthLabel} ${year}</div>
+                <div class="text-6xl font-bold leading-none mt-1 text-indigo-700 dark:text-indigo-100">${parseInt(day, 10)}</div>
+            </div>
+            <div class="border-b-2 border-dashed border-gray-200 dark:border-white/10"></div>
+            <div class="px-6 py-6 flex-1 flex flex-col">
+                <h3 class="text-lg font-semibold text-center mb-3">${n.title}</h3>
+                <p class="text-sm opacity-80 text-justify leading-relaxed">${n.text}</p>
             </div>
         `;
 
@@ -145,25 +313,168 @@ async function loadProjects() {
     const data = await res.json();
     const container = document.getElementById('projects-container');
 
-    for (const p of data) {
-        const md = await fetch(p.markdown).then(r => r.text());
-        const html = marked.parse(md);
+    const field = (label, value) => value
+        ? `<div>
+               <div class="text-xs uppercase tracking-wide opacity-50 mb-0.5">${label}</div>
+               <div>${value}</div>
+           </div>`
+        : '';
 
+    let i = 0;
+    for (const p of data) {
+        const panelId = `project-panel-${i}`;
         const div = document.createElement('div');
-        div.className = "bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden";
+        div.className = "bg-white dark:bg-night-800 rounded-2xl shadow-sm overflow-hidden";
 
         div.innerHTML = `
-            <div class="p-5">
-                <h3 class="text-xl font-semibold mb-2">${p.title}</h3>
-                <div class="text-sm opacity-80 prose dark:prose-invert">${html}</div>
+            <button onclick="toggleProject(this)" aria-expanded="false" aria-controls="${panelId}" class="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-gray-50 dark:hover:bg-night-700/40 transition">
+                <span class="min-w-0 text-[15px] font-medium">${p.title}</span>
+                <span class="chev shrink-0 text-sm text-indigo-500 transition-transform duration-300" aria-hidden="true">▾</span>
+            </button>
+            <div id="${panelId}" class="hidden px-5 pb-5 pt-6">
+                ${p.description ? `<p class="text-sm opacity-80 leading-relaxed mb-3">${p.description}</p>` : ''}
+                <div class="flex flex-wrap gap-x-10 gap-y-3 text-sm border-t border-gray-100 dark:border-white/10 pt-3">
+                    ${field('Requirements', p.requirements)}
+                    ${field('Duration', p.duration)}
+                    ${field('Contact', p.contact)}
+                </div>
             </div>
         `;
 
         container.appendChild(div);
+        i++;
     }
 }
 
+function toggleProject(btn) {
+    const expanded = btn.nextElementSibling.classList.toggle('hidden') === false;
+    btn.querySelector('.chev').classList.toggle('rotate-180');
+    btn.setAttribute('aria-expanded', String(expanded));
+}
+
+// RESEARCH
+async function loadResearch() {
+    const data = await fetch('data/research.json').then(r => r.json());
+    document.getElementById('research-intro').textContent = data.intro;
+
+    const container = document.getElementById('research-container');
+
+    // Fallback tints used when an entry has no image yet.
+    const fallbacks = [
+        'from-indigo-700 to-purple-900',
+        'from-purple-700 to-fuchsia-900',
+        'from-blue-700 to-indigo-900',
+        'from-violet-700 to-indigo-900',
+        'from-fuchsia-700 to-purple-900'
+    ];
+
+    let i = 0;
+    for (const item of data.areas) {
+        const bg = item.image
+            ? `bg-cover bg-center`
+            : `bg-gradient-to-br ${fallbacks[i % fallbacks.length]}`;
+
+        const div = document.createElement('div');
+        div.className = `group relative h-64 w-full sm:w-[22rem] rounded-2xl shadow-lg overflow-hidden ${bg}`;
+        div.setAttribute('style', item.image ? `background-image:url('${item.image}')` : '');
+        div.innerHTML = `
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <h3 class="absolute bottom-0 left-0 right-0 p-5 text-white text-xl font-semibold z-10 transition-opacity duration-300 group-hover:opacity-0">${item.title}</h3>
+            <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center p-6 text-white">
+                <h3 class="text-xl font-semibold mb-3">${item.title}</h3>
+                <p class="text-sm opacity-90 leading-relaxed">${item.text}</p>
+            </div>
+        `;
+        container.appendChild(div);
+        i++;
+    }
+}
+
+// FORMER MEMBERS
+async function loadFormerMembers() {
+    const data = await fetch('data/former_members.json').then(r => r.json());
+    const container = document.getElementById('former-container');
+
+    if (!data.length) {
+        container.innerHTML = `<p class="p-5 text-sm opacity-60">No former members listed yet.</p>`;
+        return;
+    }
+
+    data.forEach(m => {
+        const initials = m.name.split(' ').map(w => w[0]).slice(0,2).join('');
+        const row = document.createElement('div');
+        row.className = "flex items-center gap-4 p-4";
+        row.innerHTML = `
+            <div class="w-9 h-9 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200 flex items-center justify-center text-xs font-semibold shrink-0">${initials}</div>
+            <div class="flex-1">
+                <span class="font-semibold text-sm">${m.name}</span>
+                <span class="text-xs opacity-70">${m.role ? '· ' + m.role : ''} ${m.years ? '· ' + m.years : ''}</span>
+            </div>
+            ${m.now ? `<div class="text-xs opacity-60 text-right">${m.now}</div>` : ''}
+        `;
+        container.appendChild(row);
+    });
+}
+
+// COLLABORATIONS & FUNDING
+async function loadCollaborations() {
+    const data = await fetch('data/collaborations.json').then(r => r.json());
+    const container = document.getElementById('collaborations-container');
+
+    data.forEach(c => {
+        const a = document.createElement('a');
+        a.href = c.url || '#';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.title = c.name;
+        // Always a white chip so logos (dark or coloured) read correctly in both
+        // light and dark mode. Large tiles with generous padding give each
+        // collaboration room to breathe and feel significant.
+        a.className = "flex items-center justify-center h-32 w-56 md:h-36 md:w-64 p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-lg dark:hover:shadow-white/10 hover:-translate-y-1 transition duration-300";
+        a.innerHTML = c.logo
+            ? `<img src="${c.logo}" alt="${c.name}" class="max-h-16 md:max-h-20 max-w-full object-contain">`
+            : `<span class="text-2xl font-bold tracking-tight text-gray-800">${c.name}</span>`;
+        container.appendChild(a);
+    });
+}
+
+// PUBLICATIONS
+async function loadPublications() {
+    const data = await fetch('data/publications.json').then(r => r.json());
+    const container = document.getElementById('publications-container');
+
+    data.highlights.forEach(p => {
+        const a = document.createElement('a');
+        a.href = p.url || '#';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = "group flex gap-4 items-baseline bg-white dark:bg-night-800 border border-gray-200 dark:border-white/10 rounded-2xl shadow-sm p-5 hover:shadow-md dark:hover:shadow-white/10 hover:-translate-y-0.5 transition duration-300";
+        a.innerHTML = `
+            <span class="shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200">${p.year}</span>
+            <div class="flex-1 min-w-0">
+                <h3 class="font-semibold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition">${p.title}</h3>
+                ${p.authors ? `<p class="text-sm opacity-70 mt-1">${p.authors}</p>` : ''}
+            </div>
+            <span class="shrink-0 self-center text-indigo-500 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition duration-300" aria-hidden="true">→</span>
+        `;
+        container.appendChild(a);
+    });
+
+    if (data.ads_library) {
+        document.getElementById('publications-ads').innerHTML = `
+            <a href="${data.ads_library}" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition">
+                All publications on ADS →
+            </a>`;
+    }
+}
+
+// ---- Init: fetch and render every section --------------------------------
+loadResearch();
+loadCollaborations();
+loadPublications();
 loadMembers();
+loadFormerMembers();
 loadNews();
 loadProjects();
 </script>

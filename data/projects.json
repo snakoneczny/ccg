@@ -1,22 +1,37 @@
 [
   {
-    "title": "Clustering redshifts for KiDS data",
-    "markdown": "data/projects/mb_1_redshifts.md"
+    "title": "Clustering redshifts for the KiDS survey",
+    "description": "Measuring the redshift distribution of Kilo-Degree Survey galaxies and quasars with the clustering redshift technique, using the yet_another_wizz package.",
+    "requirements": "Python, basic computing knowledge",
+    "duration": "",
+    "contact": "Maciej Bilicki"
   },
   {
-    "title": "Cosmology with gravitational wave sources",
-    "markdown": "data/projects/mb_2_gw.md"
-  },  
+    "title": "Cosmology with gravitational-wave sources from LIGO/Virgo/KAGRA",
+    "description": "Using the GWcosmo software package for cosmological analysis with large galaxy catalogs and gravitational wave sources from LIGO/Virgo/KAGRA data.",
+    "requirements": "Python, basic computing knowledge",
+    "duration": "",
+    "contact": "Maciej Bilicki"
+  },
   {
-    "title": "Simulation based inference",
-    "markdown": "data/projects/sjn_1_sbi.md"
+    "title": "Simulation-based inference for cosmology",
+    "description": "Develop transformer based models for simulation based inference in cosmology.",
+    "requirements": "Python, basic ML knowledge, basic cosmology knowledge",
+    "duration": "6 months",
+    "contact": "Szymon J. Nakoneczny"
   },
   {
     "title": "Machine learning with DESI deep fields",
-    "markdown": "data/projects/sjn_2_desi.md"
+    "description": "Work on ML models for classification and photometric redshifts using DESI deep fields.",
+    "requirements": "Python, basic ML knowledge",
+    "duration": "6 months",
+    "contact": "Szymon J. Nakoneczny"
   },
   {
-    "title": "Cosmology using ACT data",
-    "markdown": "data/projects/sjn_3_act.md"
+    "title": "Cosmological constraints from ACT, LOFAR and KiDS cross-correlations",
+    "description": "Cosmological constraints using cross-correlations of ACT, LOFAR and/or KiDS.",
+    "requirements": "Python, basic cosmology knowledge",
+    "duration": "6 months",
+    "contact": "Szymon J. Nakoneczny"
   }
 ]

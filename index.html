@@ -6,21 +6,20 @@
     <title>Computational Cosmology Group</title>
     <meta name="description" content="Computational Cosmology Group — we explore the Universe using simulations, surveys, and AI.">
     <meta name="theme-color" content="#ffffff" id="theme-color-meta">
-    <!-- Favicon: a small "cosmic web" node-and-filament mark, echoing the hero
-         image, on a pale lavender chip so it stays legible in browser tabs. -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23f4f1fb'/><g stroke='%237c6fd8' stroke-width='1.6' stroke-linecap='round' opacity='0.6'><line x1='14' y1='20' x2='30' y2='12'/><line x1='30' y1='12' x2='46' y2='23'/><line x1='14' y1='20' x2='19' y2='42'/><line x1='19' y1='42' x2='37' y2='47'/><line x1='37' y1='47' x2='46' y2='23'/><line x1='46' y1='23' x2='50' y2='41'/><line x1='37' y1='47' x2='50' y2='41'/></g><g fill='%234f46e5'><circle cx='14' cy='20' r='3'/><circle cx='30' cy='12' r='2.4'/><circle cx='46' cy='23' r='4.2'/><circle cx='19' cy='42' r='2.4'/><circle cx='37' cy='47' r='3'/><circle cx='50' cy='41' r='2.4'/></g></svg>">
+    <!-- Favicon: the CCG mark (cosmic-web brain). -->
+    <link rel="icon" href="assets/logo/ccg-mark.svg" type="image/svg+xml">
     <!-- Social sharing preview (Open Graph / Twitter). Uses the site's final
          published URL — absolute URLs are required for previews to render
          correctly on most platforms. -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Computational Cosmology Group">
     <meta property="og:description" content="We explore the Universe using simulations, surveys, and AI.">
-    <meta property="og:image" content="https://ccg.cft.edu.pl/assets/hero/tng300.jpg">
+    <meta property="og:image" content="https://ccg.cft.edu.pl/assets/logo/ccg-og.png">
     <meta property="og:url" content="https://ccg.cft.edu.pl/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Computational Cosmology Group">
     <meta name="twitter:description" content="We explore the Universe using simulations, surveys, and AI.">
-    <meta name="twitter:image" content="https://ccg.cft.edu.pl/assets/hero/tng300.jpg">
+    <meta name="twitter:image" content="https://ccg.cft.edu.pl/assets/logo/ccg-og.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -76,7 +75,10 @@
 <!-- Navbar -->
 <nav class="fixed top-0 left-0 w-full z-40 backdrop-blur bg-white/70 dark:bg-night-900/70 border-b border-gray-200 dark:border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="font-semibold text-lg">CCG</div>
+        <a href="#" aria-label="Computational Cosmology Group — back to top" class="flex items-center">
+            <img src="assets/logo/ccg-logo.svg" alt="CCG" class="h-9 dark:hidden">
+            <img src="assets/logo/ccg-logo-dark.svg" alt="CCG" class="h-9 hidden dark:block">
+        </a>
         <div class="hidden md:flex gap-8 text-sm">
             <a href="#research">Research</a>
             <a href="#people">People</a>
@@ -176,6 +178,7 @@
 
 <footer class="border-t border-gray-200 dark:border-white/10 py-14 px-6 text-center">
     <div class="max-w-3xl mx-auto">
+        <img src="assets/logo/ccg-mark.svg" alt="" class="h-14 mx-auto mb-4">
         <div class="font-semibold text-base">Computational Cosmology Group</div>
         <p class="opacity-70 text-sm mt-2">
             Center for Theoretical Physics, Polish Academy of Sciences<br>

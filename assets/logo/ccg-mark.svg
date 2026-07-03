@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <title>Computational Cosmology Group — mark</title>
+  <!-- Brain silhouette formed by a cosmic-web network: clusters (large warm
+       nodes) connected by filaments, voids between them. -->
+  <g transform="translate(-2,8)">
+    <g stroke="#a78eea" stroke-width="3" fill="none" opacity="0.8" stroke-linecap="round">
+      <path d="M95,22 Q126,14 152,42"/>
+      <path d="M152,42 Q177,60 170,88"/>
+      <path d="M170,88 Q172,102 158,106"/>
+      <path d="M158,106 Q146,104 140,112"/>
+      <path d="M140,112 Q150,111 154,120"/>
+      <path d="M154,120 Q163,129 158,140"/>
+      <path d="M158,140 Q152,154 136,153"/>
+      <path d="M136,153 Q129,151 125,145"/>
+      <path d="M125,145 Q122,159 113,163"/>
+      <path d="M113,163 Q103,159 98,143"/>
+      <path d="M98,143 Q86,148 76,140"/>
+      <path d="M76,140 Q48,133 42,102"/>
+      <path d="M42,102 Q28,88 40,74"/>
+      <path d="M40,74 Q34,52 54,48"/>
+      <path d="M54,48 Q58,18 95,22"/>
+      <path d="M140,112 Q128,127 125,145"/>
+      <path d="M94,70 Q86,44 95,22"/>
+      <path d="M94,70 Q74,54 54,48"/>
+      <path d="M94,70 Q78,86 62,92"/>
+      <path d="M94,70 Q112,66 132,86"/>
+      <path d="M94,70 Q90,92 102,114"/>
+      <path d="M94,70 Q108,58 122,50"/>
+      <path d="M122,50 Q127,68 132,86"/>
+      <path d="M122,50 Q136,40 152,42"/>
+      <path d="M132,86 Q152,80 170,88"/>
+      <path d="M132,86 Q139,99 140,112"/>
+      <path d="M132,86 Q114,102 102,114"/>
+      <path d="M102,114 Q112,130 125,145"/>
+      <path d="M102,114 Q103,140 113,163"/>
+      <path d="M102,114 Q94,130 98,143"/>
+      <path d="M102,114 Q86,124 76,140"/>
+      <path d="M102,114 Q80,106 62,92"/>
+      <path d="M62,92 Q60,118 76,140"/>
+      <path d="M62,92 Q49,94 42,102"/>
+      <path d="M62,92 Q48,82 40,74"/>
+    </g>
+    <g fill="#5c2fa4">
+      <circle cx="95" cy="22" r="2.8"/>
+      <circle cx="152" cy="42" r="4.2"/>
+      <circle cx="170" cy="88" r="3.3"/>
+      <circle cx="158" cy="106" r="2.7"/>
+      <circle cx="140" cy="112" r="3.0"/>
+      <circle cx="154" cy="120" r="2.7"/>
+      <circle cx="158" cy="140" r="3.2"/>
+      <circle cx="136" cy="153" r="2.7"/>
+      <circle cx="125" cy="145" r="3.0"/>
+      <circle cx="113" cy="163" r="3.5"/>
+      <circle cx="98" cy="143" r="2.6"/>
+      <circle cx="76" cy="140" r="4.2"/>
+      <circle cx="42" cy="102" r="3.2"/>
+      <circle cx="40" cy="74" r="2.8"/>
+      <circle cx="54" cy="48" r="3.3"/>
+      <circle cx="62" cy="92" r="4.6"/>
+      <circle cx="122" cy="50" r="3.2"/>
+    </g>
+    <g fill="#d9703e">
+      <circle cx="94" cy="70" r="8"/>
+      <circle cx="132" cy="86" r="6.5"/>
+      <circle cx="102" cy="114" r="5.8"/>
+    </g>
+  </g>
+</svg>

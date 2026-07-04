@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 4 158 168">
+  <title>Computational Cosmology Group — favicon</title>
+  <!-- Small-size variant of the CCG mark: fewer nodes, thicker filaments and
+       larger cluster hubs so the logo stays legible at 16-32 px. -->
+  <g stroke="#8d75e0" stroke-width="4.5" fill="none" opacity="0.85" stroke-linecap="round"><path d="M95,20 Q128,12 150,40"/><path d="M150,40 Q176,58 171,86"/><path d="M171,86 Q172,104 142,106"/><path d="M142,106 Q158,110 158,128"/><path d="M158,128 Q154,152 126,152"/><path d="M126,152 Q118,162 110,162"/><path d="M110,162 Q86,158 70,138"/><path d="M70,138 Q38,126 36,88"/><path d="M36,88 Q28,58 56,44"/><path d="M56,44 Q62,22 95,20"/><path d="M142,106 Q124,126 126,152"/><path d="M94,68 Q88,42 95,20"/><path d="M94,68 Q72,52 56,44"/><path d="M94,68 Q78,82 62,90"/><path d="M94,68 Q112,64 132,86"/><path d="M94,68 Q92,92 102,114"/><path d="M132,86 Q134,60 150,40"/><path d="M132,86 Q152,82 171,86"/><path d="M132,86 Q139,97 142,106"/><path d="M102,114 Q122,108 142,106"/><path d="M102,114 Q84,128 70,138"/><path d="M102,114 Q104,140 110,162"/><path d="M62,90 Q48,92 36,88"/><path d="M62,90 Q60,114 70,138"/></g>
+  <g fill="#5c2fa4"><circle cx="95" cy="20" r="4.4"/><circle cx="150" cy="40" r="5.6"/><circle cx="171" cy="86" r="4.8"/><circle cx="142" cy="106" r="4.6"/><circle cx="158" cy="128" r="4.4"/><circle cx="126" cy="152" r="4.4"/><circle cx="110" cy="162" r="4.8"/><circle cx="70" cy="138" r="5.6"/><circle cx="36" cy="88" r="4.8"/><circle cx="56" cy="44" r="4.8"/><circle cx="62" cy="90" r="6.0"/></g>
+  <g fill="#d9703e"><circle cx="94" cy="68" r="11"/><circle cx="132" cy="86" r="9"/><circle cx="102" cy="114" r="8"/></g>
+</svg>
